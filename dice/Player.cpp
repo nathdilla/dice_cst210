@@ -7,20 +7,20 @@
 
 #include "Player.hpp"
 
-Player::Player(string n)
+Player::Player(string n)//constructor
 {
     name = n;
 }
 
 void Player::roll()
 {
-    for(int i = 0; i < 5; i++)
+    for(int i = 0; i < 5; i++) // loop through dice array, and call rollDice
     {
         dice[i].rollDice();
     }
 }
 
-void Player::showRoll()
+void Player::showRoll() //print value of dice array elements
 {
     for(int i = 0; i < 5; i++)
     {
@@ -29,17 +29,17 @@ void Player::showRoll()
     cout << endl;
 }
 
-int Player::getTotal()
+int Player::getTotal()//summation of dice array elements value
 {
     int total = 0;
     for(int i = 0; i < 5; i++)
     {
-        total+=dice[i].getValue();
+        total+=dice[i].getValue(); //adds value of element to int total
     }
     return total;
 }
 
 void Player::reRoll(int index)
 {
-    dice[index-1].rollDice();
+    dice[index-1].rollDice(); // roll dice of parameter index
 }
